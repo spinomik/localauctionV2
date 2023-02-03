@@ -12,17 +12,15 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-from boto.s3.connection import S3Connection
 
 #connection to heroku vars
-HEROKU_DB_PASSWORD = S3Connection(os.environ['Db_Password'])
-HEROKU_SECRET_KEY = S3Connection(os.environ['Secret_Key'])
+HEROKU_DB_PASSWORD = os.environ('DB_PASSWORD')
+HEROKU_SECRET_KEY = os.environ('S3_KEY')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 MEDIA_ROOT = ''
 MEDIA_URL = ''
-print(s3)
 
 
 # Quick-start development settings - unsuitable for production
