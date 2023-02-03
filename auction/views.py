@@ -23,7 +23,7 @@ class home(View):
 
 class loginView(View):
     def get(self, request):
-        return render(request, 'pageslogin.html')
+        return render(request, 'pages/login.html')
 
     def post(self, request):
         username = request.POST['username']
