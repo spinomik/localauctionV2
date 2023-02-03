@@ -19,11 +19,11 @@ class home(View):
             'items': items,
         }
         messages.success(request,'')
-        return render(request, 'index.html', data)
+        return render(request, 'pages/index.html', data)
 
 class loginView(View):
     def get(self, request):
-        return render(request, 'login.html')
+        return render(request, 'pages/login.html')
 
     def post(self, request):
         username = request.POST['username']
@@ -35,14 +35,14 @@ class loginView(View):
             return HttpResponseRedirect('/index/')
         else:
             messages.success(request,'Niepoprawny login lub hasło')
-            return render(request, 'login.html')
+            return render(request, 'pages/login.html')
 
 
 class logoutView(View):
     def get(self, request):
         logout(request)
         messages.success(request, 'Wylogowano z systemu!')
-        return render(request, 'login.html')
+        return render(request, 'pages/login.html')
 
 
 class bought(View):
@@ -54,7 +54,7 @@ class bought(View):
             'navBar': 'bought',
             'items': items,
         }
-        return render(request, 'bought.html', data)
+        return render(request, 'pages/bought.html', data)
 
 
 class bidItem(View):
