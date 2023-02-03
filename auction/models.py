@@ -12,7 +12,7 @@ class Item(models.Model):
     name = models.CharField(max_length=255, unique=True)
     shortDescription = models.CharField(max_length=255)
     description = models.TextField()
-    picture = models.ImageField(upload_to='auction/static/img/items')
+    picture = models.TextField()
     startDate = models.DateTimeField()
     endDate = models.DateTimeField()
     status = models.CharField(choices=STATUS, default="new", max_length=255)
