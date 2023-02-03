@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Logowanie{% endblock %}
+{% block body %}
+<div class="container" style="height: 30vh">
+  <div class="row justify-content-md-center">
+    <div class="col-md-3">
+    <span class="h1">Logowanie</span>
+      <form action="{% url 'logIn' %}" method="POST">
+        {% csrf_token %}
+         <div class="mb-3">
+           <input type="text" class="mt-4 form-control" name="username" id="login" placeholder="Login:">
+         </div>
+         <div class="mb-3">
+           <input type="password" class="mt-2 form-control" name="password" id="password" placeholder="Hasło:">
+         </div>
+        <input type="submit" class="btn btn-outline-dark mt-auto" value="Zaloguj">
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+

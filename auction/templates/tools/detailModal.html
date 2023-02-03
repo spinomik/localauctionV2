@@ -1,0 +1,21 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#Modal{{card.id}}Detail">Szczególy</button>
+
+<!-- Modal -->
+<div class="modal fade" id="Modal{{card.id}}Detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1>{{card.name}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="{{card.picture.url}}" class="card-img-top">
+          <p>{{card.description}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark mt-auto" data-bs-dismiss="modal">Zamknij</button>
+        </div>
+    </div>
+  </div>
+</div>

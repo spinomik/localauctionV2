@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block body %}
+{% if user.is_authenticated %}
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for card in items %}
+            {% include 'card.html' %}
+            {% empty %}
+            <h1>Brak Aukcji do wyświetlenia!</h1>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% else %}
+<h1 class="text-center"> Zaloguj się! </h1>
+{% endif %}
+{% endblock %}

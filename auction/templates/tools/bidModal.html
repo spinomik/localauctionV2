@@ -1,0 +1,30 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#Modal{{card.id}}Modal">Licytuj</button>
+
+<!-- Modal -->
+<div class="modal fade" id="Modal{{card.id}}Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="{% url 'bidItem' %}" method="POST">
+        {% csrf_token %}
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Licytujesz {{card.name}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="username" value="{{user.username}}">
+          <input type="hidden" name="itemId" value="{{card.id}}">
+          <div class="mb-3">
+            <label for="biddingAmount" class="form-label">Kwota licytacji: </label>
+            <input type="number" step="5" name="amount" class="form-control" id="biddingAmount" aria-describedby="biddingAmountHelp">
+              <div id="biddingAmountHelp" class="form-text">Podaj kwotę jaką możesz zaoferować za przedmiot!</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark mt-auto" data-bs-dismiss="modal">Anuluj</button>
+          <button type="submit" class="btn btn-outline-success mt-auto">Licytuj!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
