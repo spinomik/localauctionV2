@@ -14,8 +14,8 @@ from pathlib import Path
 import os
 
 #connection to heroku vars
-HEROKU_DB_PASSWORD = os.environ('DB_PASSWORD')
-HEROKU_SECRET_KEY = os.environ('S3_KEY')
+HEROKU_DB_PASSWORD = os.getenv('DB_PASSWORD')
+HEROKU_SECRET_KEY = os.getenv('S3_KEY')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
