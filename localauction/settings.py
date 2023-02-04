@@ -30,7 +30,7 @@ MEDIA_URL = ''
 SECRET_KEY = HEROKU_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localauctionszwak.herokuapp.com']
 
