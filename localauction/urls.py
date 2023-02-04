@@ -4,9 +4,6 @@ from django.conf.urls.static import static
 from django.conf import settings
 from auction.views import *
 
-from django.views.static import serve
-from django.contrib.auth.decorators import login_required
-
 
 urlpatterns = [
     path('', home.as_view(), name="home"),
